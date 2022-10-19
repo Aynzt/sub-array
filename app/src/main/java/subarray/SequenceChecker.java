@@ -10,7 +10,7 @@ public class SequenceChecker {
 
     private static final Logger LOGGER = System.getLogger(SequenceChecker.class.getName());
 
-    public Function<Integer, int[]> populator() {
+    public Function<Integer, int[]> populator(int bound) {
         return limit -> {
             SecureRandom secureRandom = new SecureRandom();
 
@@ -19,7 +19,7 @@ public class SequenceChecker {
             int i = 0;
 
             do {
-                array[i] = secureRandom.nextInt(10);
+                array[i] = secureRandom.nextInt(bound);
                 i++;
             } while (i < limit);
 

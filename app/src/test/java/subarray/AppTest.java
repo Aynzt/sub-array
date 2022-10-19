@@ -46,9 +46,9 @@ class AppTest {
     void hasSequenceForBigData() {
         SequenceChecker sequenceChecker = new SequenceChecker();
 
-        int[] array = sequenceChecker.populator().apply(10000);
+        int[] array = sequenceChecker.populator(10).apply(10000);
 
-        int[] sequence = sequenceChecker.populator().apply(500);
+        int[] sequence = sequenceChecker.populator(10).apply(500);
 
         assertTrue(sequenceChecker.check(array, sequence));
     }
